@@ -27,51 +27,33 @@ function App() {
   const criterias = ["Offers", "Performance", "Platform", "Product Feedback"];
 
   const handleChange = (e) => {
-    if (e.target.name == "Field") setField(e.target.value);
-    if (e.target.name == "Condition") setCondition(e.target.value);
-    if (e.target.name == "Criteria") setCriteria(e.target.value);
+    if (e.target.name === "Field") setField(e.target.value);
+    if (e.target.name === "Condition") setCondition(e.target.value);
+    if (e.target.name === "Criteria") setCriteria(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const data = [
-    //   { field: field },
-    //   { conditon: condition },
-    //   { criteria: criteria },
-    // ];
-    // const query = [];
-    // for (let d in data) {
-    //   query.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
-    //   return query.join("&");
-    // }
-    // alert(query + "query generated");
-    console.log("queryClicked");
+
+    let query = new URLSearchParams();
+    query.append("field", field);
+    query.append("condition", condition);
+    query.append("criteria", criteria);
+
+    console.log(query.toString());
   };
-  
 
   return (
     <>
       <div className="home-container">
-        <h1 className="navbar">Query App</h1>
+        <h1 style={{color: "white"}} className="navbar">Create tag and query</h1>
         {/* <h1>Field : {field}</h1>
         <h1>Condition : {condition}</h1>
         <h1>Criteria : {criteria}</h1> */}
-{/* <Container>
-  <Row>
-    <Col>1 of 2</Col>
-    <Col>2 of 2</Col>
-  </Row>
-  <Row>
-    <Col>1 of 3</Col>
-    <Col>2 of 3</Col>
-    <Col>3 of 3</Col>
-  </Row>
-</Container> */}
+
         <form>
           <div className="dropdown-container">
-            <Row>
             <div className="dropdown">
-              
               <select name="Field" id="field" onChange={handleChange}>
                 <option value="">Select Field</option>
                 {fields.map((val) => (
@@ -79,8 +61,6 @@ function App() {
                 ))}
               </select>
             </div>
-            </Row>
-            <Row>
             <div className="dropdown">
               <select name="Condition" id="condition" onChange={handleChange}>
                 <option value="">Select Conditon</option>
@@ -89,8 +69,6 @@ function App() {
                 ))}
               </select>
             </div>
-            </Row>
-            <Row>
             <div className="dropdown">
               <select name="Criteria" id="criteria" onChange={handleChange}>
                 <option value="">Select Criteria</option>
@@ -99,9 +77,8 @@ function App() {
                 ))}
               </select>
             </div>
-            </Row>
           </div>
-          <button onClick={handleSubmit}>Generate Query</button>
+          {/* <button onClick={handleSubmit}>Generate Query</button> */}
         </form>
       </div>
     </>
