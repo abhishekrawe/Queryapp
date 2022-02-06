@@ -53,7 +53,7 @@ function App() {
 
         <form>
           <div className="dropdown-container">
-            <div className="dropdown">
+            <div className="dropdown-1">
               <select name="Field" id="field" onChange={handleChange}>
                 <option value="">Select Field</option>
                 {fields.map((val) => (
@@ -61,7 +61,7 @@ function App() {
                 ))}
               </select>
             </div>
-            <div className="dropdown">
+            <div className="dropdown-2">
               <select name="Condition" id="condition" onChange={handleChange}>
                 <option value="">Select Conditon</option>
                 {conditions.map((val) => (
@@ -69,7 +69,7 @@ function App() {
                 ))}
               </select>
             </div>
-            <div className="dropdown">
+            <div className="dropdown-3">
               <select name="Criteria" id="criteria" onChange={handleChange}>
                 <option value="">Select Criteria</option>
                 {criterias.map((val) => (
