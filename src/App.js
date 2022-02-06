@@ -5,6 +5,8 @@ function App() {
   const [condition, setCondition] = useState("");
   const [criteria, setCriteria] = useState("");
 
+  const [queryStr, setQueryStr] = useState("Your query will be shown here");
+
   const fields = [
     "Theme",
     "Sub-theme",
@@ -39,7 +41,7 @@ function App() {
     query.append("field", field);
     query.append("condition", condition);
     query.append("criteria", criteria);
-
+    setQueryStr(query.toString());
     console.log(query.toString());
   };
 
@@ -48,18 +50,27 @@ function App() {
       <div className="home-container">
         <h1 style={{ color: "white" }} className="navbar">
           Create tag and query
+         
           <form>
-          <label className="label">
-            Build your Query
-            <input className="input-type" type="text" name="name" />
-          </label>
-          {/* <input type="submit" value="Submit" /> */}
-        </form>
+            <tr>
+            <label className="label">
+              Query :{" "}
+              <td>
+              <input
+                value={queryStr}
+                className="input-type"
+                type="text"
+                name="name"
+              />
+              </td>
+            </label>
+            <td>
+            <button className="button" onClick={handleSubmit}> Submit </button>
+            </td>
+            
+            </tr>
+          </form>
         </h1>
-        
-        {/* <h1>Field : {field}</h1>
-        <h1>Condition : {condition}</h1>
-        <h1>Criteria : {criteria}</h1> */}
 
         <form>
           <div className="dropdown-container">
@@ -109,8 +120,9 @@ function App() {
               </select>
             </div>
           </div>
-          <button onClick={handleSubmit}>Generate Query</button>
+          
         </form>
+        
       </div>
     </>
   );
