@@ -46,7 +46,17 @@ function App() {
   return (
     <>
       <div className="home-container">
-        <h1 style={{color: "white"}} className="navbar">Create tag and query</h1>
+        <h1 style={{ color: "white" }} className="navbar">
+          Create tag and query
+          <form>
+          <label className="label">
+            Build your Query
+            <input className="input-type" type="text" name="name" />
+          </label>
+          {/* <input type="submit" value="Submit" /> */}
+        </form>
+        </h1>
+        
         {/* <h1>Field : {field}</h1>
         <h1>Condition : {condition}</h1>
         <h1>Criteria : {criteria}</h1> */}
@@ -54,31 +64,52 @@ function App() {
         <form>
           <div className="dropdown-container">
             <div className="dropdown-1">
-              <select name="Field" id="field" onChange={handleChange}>
-                <option value="">Select Field</option>
+              <select
+                className="dropdown-select"
+                name="Field"
+                id="field"
+                onChange={handleChange}
+              >
+                <option className="dropdown-option" value="">
+                  Select Field
+                </option>
                 {fields.map((val) => (
                   <option value={val}>{val}</option>
                 ))}
               </select>
             </div>
             <div className="dropdown-2">
-              <select name="Condition" id="condition" onChange={handleChange}>
-                <option value="">Select Conditon</option>
+              <select
+                className="dropdown-select"
+                name="Condition"
+                id="condition"
+                onChange={handleChange}
+              >
+                <option className="dropdown-option" value="">
+                  Select Conditon
+                </option>
                 {conditions.map((val) => (
                   <option value={val}>{val}</option>
                 ))}
               </select>
             </div>
             <div className="dropdown-3">
-              <select name="Criteria" id="criteria" onChange={handleChange}>
-                <option value="">Select Criteria</option>
+              <select
+                className="dropdown-select"
+                name="Criteria"
+                id="criteria"
+                onChange={handleChange}
+              >
+                <option className="dropdown-option" value="">
+                  Select Criteria
+                </option>
                 {criterias.map((val) => (
                   <option value={val}>{val}</option>
                 ))}
               </select>
             </div>
           </div>
-          {/* <button onClick={handleSubmit}>Generate Query</button> */}
+          <button onClick={handleSubmit}>Generate Query</button>
         </form>
       </div>
     </>

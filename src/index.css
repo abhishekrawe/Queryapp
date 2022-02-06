@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  width: 1440px;
+  height: 1016px;
+  left: 0px;
+  top: 0px;
+
+  background: #282b30;
 }
 
 code {
@@ -17,7 +24,6 @@ code {
   height: 843px;
   left: 240px;
   top: 142px;
-
   background: #1d2025;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -85,4 +91,53 @@ code {
   border: 1px solid #404348;
   box-sizing: border-box;
   border-radius: 4px;
+}
+
+.dropdown-select {
+  width: 250px;
+  height: 36px;
+  left: 288px;
+  top: 490px;
+  background: #404348;
+  border: 1px solid #404348;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.dropdown-option {
+  position: absolute;
+  left: 20%;
+  right: 62.64%;
+  top: 52.95%;
+  bottom: 11.91%;
+  background: #282b30;
+  border: 1px solid #404348;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.input-type {
+  /* Frame 66 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  position: static;
+  width: 762px;
+  height: 10px;
+  left: 32px;
+  background: #4338ca;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+}
+.label {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
 }
